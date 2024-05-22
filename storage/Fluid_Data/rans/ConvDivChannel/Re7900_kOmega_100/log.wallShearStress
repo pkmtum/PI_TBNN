@@ -1,0 +1,65 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2006                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _b45f8f6f58-20200629 OPENFOAM=2006
+Arch   : "LSB;label=32;scalar=64"
+Exec   : simpleFoam -postProcess -func wallShearStress -latestTime
+Date   : Feb 07 2021
+Time   : 11:52:49
+Host   : pop-os
+PID    : 11956
+I/O    : uncollated
+Case   : /home/leonriccius/Desktop/ConvDivChannel/Re7900_kOmega_100
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 7000
+
+
+SIMPLE: convergence criteria
+    field p	 tolerance 1e-15
+
+wallShearStress wallShearStress:
+    processing all wall patches
+
+Time = 7000
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Selecting incompressible transport model Newtonian
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kOmega
+RAS
+{
+    RASModel        kOmega;
+    turbulence      on;
+    printCoeffs     on;
+    betaStar        0.09;
+    beta            0.072;
+    gamma           0.52;
+    alphaK          0.5;
+    alphaOmega      0.5;
+}
+
+No MRF models present
+
+No finite volume options present
+wallShearStress wallShearStress write:
+    writing field wallShearStress
+    min/max(bottomWall) = (-0.0136862937800211 -0.00425794600978361 -7.18370881413295e-19), (0.00138459258626185 0.000400872608012172 1.04910770430314e-18)
+    min/max(topWall) = (-0.00702019707601028 -4.29140811122547e-06 0), (-0.0015217488352078 5.68074648147585e-06 0)
+
+End
+

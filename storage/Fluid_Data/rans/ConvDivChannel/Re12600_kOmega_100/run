@@ -1,0 +1,13 @@
+#!/bin/bash
+
+blockMesh > log.blockMesh
+checkMesh > log.checkMesh
+simpleFoam > log.simpleFoam;
+
+sleep 1
+
+## wallShearStress -latestTime > log.wallShearStress;
+R -latestTime;
+calcVelGrad -latestTime;
+writeCellCentres2 -latestTime;
+calcTkeGrad -latestTime

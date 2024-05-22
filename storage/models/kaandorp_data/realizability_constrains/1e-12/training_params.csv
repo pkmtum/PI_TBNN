@@ -1,0 +1,14 @@
+,0
+lr_initial,2.5e-05
+n_epochs,1000
+batch_size,100
+fixed_seed,True
+early_stopping,True
+moving_average,5
+min_epochs,200
+weight_decay,0
+builtin_weightdecay,False
+lambda_real,tensor(1.0000e-12)
+error_method,b_unique
+train_set_size,9800
+last_val_loss,0.0009774521356139007

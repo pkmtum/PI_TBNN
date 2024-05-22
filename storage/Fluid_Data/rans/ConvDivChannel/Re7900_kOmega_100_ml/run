@@ -1,0 +1,30 @@
+#!/bin/bash
+
+blockMesh > log.blockMesh
+checkMesh > log.checkMesh
+simpleFoam > log.simpleFoam;
+
+## postProcessing
+sleep 1
+
+simpleFoam -postProcess -func wallShearStress -latestTime > log.wallShearStress;
+simpleFoam -postProcess -func R -latestTime;
+postProcess -func "grad(U)" -latestTime;
+writeCellCentres2 -latestTime
+
+rm -fv system/sampleDict
+cd system
+ln -s sampleDict_velocityProfile sampleDict
+cd ..
+postProcess -func sampleDict -latestTime;
+cd system
+rm -fv sampleDict
+ln -s sampleDict_wallShearStress sampleDict
+cd ..
+postProcess -func sampleDict -latestTime
+
+rm -r 4* 5* 6* 7* 8* 9* 3000 2000 1000 11* 12* 13* 14* 15* 16* 17* 18* 19*
+
+
+
+touch DONE

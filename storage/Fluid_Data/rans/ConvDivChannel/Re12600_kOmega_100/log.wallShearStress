@@ -1,0 +1,69 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2006                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _b45f8f6f58-20200629 OPENFOAM=2006
+Arch   : "LSB;label=32;scalar=64"
+Exec   : simpleFoam -postProcess -func wallShearStress -latestTime
+Date   : Feb 18 2021
+Time   : 14:32:07
+Host   : pop-os
+PID    : 15830
+I/O    : uncollated
+Case   : /home/leonriccius/Documents/Fluid_Data/rans_kaandorp/ConvDivChannel/Re12600_kOmega_100
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 5, maxFileModificationPolls 20)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+--> FOAM Warning : 
+    From static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&, Foam::IOstreamOption::compressionType)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 115
+    Unknown compression specifier 'uncompressed', using compression off
+Create mesh for time = 7000
+
+
+SIMPLE: convergence criteria
+    field p	 tolerance 1e-15
+
+wallShearStress wallShearStress:
+    processing all wall patches
+
+Time = 7000
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Selecting incompressible transport model Newtonian
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kOmega
+RAS
+{
+    RASModel        kOmega;
+    turbulence      on;
+    printCoeffs     on;
+    betaStar        0.09;
+    beta            0.072;
+    gamma           0.52;
+    alphaK          0.5;
+    alphaOmega      0.5;
+}
+
+No MRF models present
+
+No finite volume options present
+wallShearStress wallShearStress write:
+    writing field wallShearStress
+    min/max(bottomWall) = (-0.0109156527526997 -0.00333154602898609 -5.72137349766241e-19), (0.000757761477602441 0.00047869017955818 4.78911483139051e-19)
+    min/max(topWall) = (-0.00599351752499048 -3.290416643923e-06 0), (-0.00157900543242056 4.12905959295832e-06 0)
+
+End
+

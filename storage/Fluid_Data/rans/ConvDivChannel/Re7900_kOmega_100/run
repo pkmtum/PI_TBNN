@@ -1,0 +1,16 @@
+#!/bin/bash
+
+## blockMesh > log.blockMesh
+checkMesh > log.checkMesh
+simpleFoam > log.simpleFoam;
+
+sleep 1
+
+## wallShearStress -latestTime > log.wallShearStress;
+simpleFoam -postProcess -func wallShearStress -latestTime > log.wallShearStress;
+simpleFoam -postProcess -func R -latestTime;
+postProcess -func "grad(U)" -latestTime;
+cellCenters -latestTime
+checkMesh -writeFields '(wallDistance)' -latestTime
+
+
