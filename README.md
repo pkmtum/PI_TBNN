@@ -23,23 +23,13 @@ The following python packages are used and can be installed by executing the fol
 pip3 install numpy pandas matplotlib scikit-learn torch torchvision scipy seaborn
 ```
 
-## References
-<a id="1">[1]</a> 
-J. Ling, A. Kurzawaski, J. Templetom (2016).  
-Reynolds averaged turbulence modelling using deep neural networks with embedded invariance,
-Journal of Fluid Mechanics, 807, 155-166.
+## Citation
+```python
+@article{riccius2023physics,
+  title={Physics-Informed Tensor Basis Neural Network for Turbulence Closure Modeling},
+  author={Riccius, Leon and Agrawal, Atul and Koutsourelakis, Phaedon-Stelios},
+  journal={arXiv preprint arXiv:2311.14576},
+  year={2023}
+}
+```
 
-<a id="2">[2]</a> 
-J. Wu, H. Xiao, E. Paterson (2018).  
-Physics-informed machine learning approach for augmenting turbulence models: A comprehensive framework,
-Physical Review Fluids, 7(3), 74602.
-
-<a id="3">[3]</a> 
-J. Wang, J. Wu, J. Ling, G. Iaccarino, H. Xiao (2017).  
-A comprehensive physics-informed machine learning framework for predictive turbulence modeling,
-arXiv.
-
-<a id="4">[4]</a> 
-S. Banjaree, R. Krahl, F. Durst, CH. Zenger (2007).  
-Presentation of anisotropy properties of turbulence, invariants versus eigenvalue approaches,
-Journal of Turbulence, 8, 1-27
